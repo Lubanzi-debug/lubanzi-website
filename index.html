@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lubanzi Fihla</title>
+  <style>
+    :root {
+      --bg: #f4f4f4;
+      --text: #333;
+      --accent: #2c3e50;
+      --highlight: #1abc9c;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --accent: #ffffff;
+      --highlight: #00c896;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+      line-height: 1.6;
+    }
+
+    header, section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    header img {
+      width: 160px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+    }
+
+    h1, h2 {
+      color: var(--accent);
+    }
+
+    nav {
+      background-color: var(--accent);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: var(--highlight);
+    }
+
+    .dark-toggle {
+      background: var(--highlight);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .section-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .section-content img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    .caption {
+      text-align: center;
+      font-style: italic;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fff;
+    }
+
+    input[type="submit"] {
+      background-color: var(--highlight);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 12px;
+    }
+
+    .button {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--highlight);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .section-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div>
+      <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    </div>
+    <ul id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="dark-toggle" onclick="toggleDark()">Toggle Dark Mode</button>
+  </nav>
+
+  <!-- Header -->
+  <header id="about">
+    <img src="my-photo.jpg" alt="Lubanzi Fihla">
+    <h1>Lubanzi Fihla</h1>
+    <p>
+      I am originally from Umzimkhulu, a small town on the South Coast. I was born and raised there until Grade 3 in 2009.
+      In 2010, I moved to Durban, studied at Wiggins Secondary School through Matric (2018),
+      and completed my degree in Management Information Systems at the University of Zululand (2022).
+    </p>
+  </header>
+
+  <!-- Education -->
+  <section id="education">
+    <h2>Education & Certifications</h2>
+    <ul>
+      <li>Bachelor’s in Management Information Systems</li>
+      <li>Microsoft Azure (AZ-900)</li>
+      <li>Microsoft Dynamics 365</li>
+      <li>CompTIA A+</li>
+      <li>CompTIA Network+</li>
+    </ul>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>Remote support (AnyDesk, TeamViewer)</li>
+      <li>Troubleshooting hardware/software/network issues</li>
+      <li>Mobile Device Management (MDM)</li>
+      <li>System maintenance & optimization</li>
+      <li>IT security compliance</li>
+      <li>Ticket documentation & peripheral setup</li>
+    </ul>
+  </section>
+
+  <!-- Experience + Photo -->
+  <section id="experience">
+    <h2>Work Experience</h2>
+    <div class="section-content">
+      <div style="flex:1">
+        <ul>
+          <li><strong>Technical Support Intern</strong><br>
+            Advannotech Pty Ltd (Jan 2024 – Present)<br>
+            Provided remote IT support, diagnosed issues, maintained systems and security.
+          </li><br>
+          <li><strong>Computer Lab Technician</strong><br>
+            Richardia Primary School (Mar 2023 – Sep 2023)<br>
+            Assisted staff/students, supervised labs, maintained equipment.
+          </li>
+        </ul>
+      </div>
+      <div style="flex:1">
+        <img src="work-photo.jpg" alt="Lubanzi Formal Shirt" />
+        <div class="caption">Lubanzi Fihla at work — dressed for success</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>📞 078 973 2604<br>📧 lubhilubanzi@gmail.com</p>
+
+    <form action="mailto:lubhilubanzi@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="email" name="Email" placeholder="Your Email" required>
+      <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
+      <input type="submit" value="Send Message">
+    </form>
+
+    <br>
+    <a class="button" href="https://www.linkedin.com" target="_blank">Visit My LinkedIn</a>
+
+    <br><br>
+    <h2>Find Me</h2>
+    <iframe
+      src="https://www.google.com/maps/embed/v1/place?AIzaSyD3CX9S-V4NiDFVeHLiWSGlc4iLDWjKyVU"
+      allowfullscreen>
+    </iframe>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+    }
+
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
